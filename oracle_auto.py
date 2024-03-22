@@ -295,7 +295,7 @@ def initiate(plugin_name, plugin_url, args):
     print("")
 
     print("    Validating the python plugin output")
-    arguments="--username={args.username} --password={args.password} --hostname={hostname} --sid={sid} --port={port} --tls={args.tls} --wallet_location={wallet_location} --oracle_home={oracle_home}"
+    arguments=f"--username={args.username} --password={args.password} --hostname={hostname} --sid={sid} --port={port} --tls={args.tls} --wallet_location={wallet_location} --oracle_home={oracle_home}"
     cmd=f"{plugins_temp_path}/{plugin_name}/{plugin_name}.py"+ " "+arguments
     result=execute_command(cmd, need_out=True)
     if not plugin_validator(result):
